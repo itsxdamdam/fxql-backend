@@ -12,3 +12,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model FxqlStatement {
+  id String @id @default(uuid())
+  sourceCurrency String
+  destinationCurrency String
+  sellPrice Decimal @db.Money 
+  BuyPrice Decimal @db.Money
+  CapAmount Int
+}
