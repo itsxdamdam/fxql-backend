@@ -12,3 +12,7 @@ export interface FxqlParseResult {
   code: string;
   data: FxqlStatement[];
 }
+
+export interface FxqlRequest {
+  FXQL: string;
+}
