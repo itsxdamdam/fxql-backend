@@ -12,7 +12,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('fxql-statements')
+  @Post("fxql-statements")
   @ApiOperation({ summary: 'Parse and store FXQL statements' })
   @ApiResponse({
     status: HttpStatus.OK,

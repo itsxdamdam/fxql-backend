@@ -55,7 +55,7 @@ export class AppService {
       capAmount,
     ] = match;
 
-    return await this.prisma.fxqlStatement.upsert({
+    return await this.prisma.fXQL.upsert({
       where: {
         sourceDestination: {
           sourceCurrency: sourceCurrency,
@@ -63,15 +63,15 @@ export class AppService {
         },
       },
       update: {
-        BuyPrice: parseFloat(buyPrice),
+        buyPrice: parseFloat(buyPrice),
         sellPrice: parseFloat(sellPrice),
         capAmount: parseInt(capAmount),
       },
       create: {
         sourceCurrency: sourceCurrency,
-        DestinationCurrency: destinationCurrency,
+        destinationCurrency: destinationCurrency,
         BuyPrice: parseFloat(buyPrice),
-        SellPrice: parseFloat(sellPrice),
+        sellPrice: parseFloat(sellPrice),
         capAmount: parseInt(capAmount),
       },
     });
